@@ -9,9 +9,17 @@
 </head>
 <body data-barba="wrapper">
     <nav>
-        <a href="index.html">HOME</a>
-        <a href="fade.html">WORK</a>
-        <a href="#">CONTACT</a>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="../assets/images/tahir-developer-icon.png" alt="">
+            </a>
+        </div>
+        <div class="links">
+            <a href="index.html">HOME</a>
+            <a href="fade.html">WORK</a>
+            <a href="#">CONTACT</a>
+        </div>
+        <div class="placeholder"></div>
     </nav>
     
     <main data-barba="container" class="is-home" data-barba-namespace="home">
@@ -23,8 +31,8 @@
         <div class="cover">
 
             <div class="title">
-                <h1>Hi, I'm Tahir.</h1>
-                <p>I make elegantly professional <b>web</b> apps and <b>flutter</b> apps and also design user experiences. If you want me to do any one of these for you, get in touch with me here.</p>
+                <h1>Hi, <span class="typed-element"></span> </h1>
+                <p>I make elegantly professional <b>web</b> apps and <b>flutter</b> apps and also <b>design user experiences</b>. If you want me to do any one of these for you, get in touch with me here.</p>
                 <a href="#">Contact Me</a>
             </div>
 
@@ -39,6 +47,7 @@
     <script src="./js/GLTFLoader.js"></script>
     <script src="../node_modules/@barba/core/dist/barba.umd.js"></script>
     <script src="../node_modules/@barba/css/dist/barba-css.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

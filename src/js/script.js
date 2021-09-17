@@ -8,16 +8,17 @@ barba.init({
                 namespace: ['home'],
             },
             beforeOnce() {
-                console.log("BEFORE ONCE");
+                // console.log("BEFORE ONCE");
             },
             once() {},
             afterOnce() {
-                console.log("AFTER ONCE");
+                // console.log("AFTER ONCE");
             },
             leave() {},
             enter() {},
             beforeEnter() {
                 init3dObj(true);
+                initTyped();
             },
             sync: true,
         }, {
@@ -32,7 +33,7 @@ barba.init({
     ]
 });
 
-//////////////////////////////////////////
+// THREE.js
 
 let container;
 let camera;
@@ -98,3 +99,19 @@ function onWindowResize() {
 
 init3dObj();
 window.addEventListener("resize", onWindowResize);
+
+//////////////////////////////////////////////////////////////
+// Typed.js
+
+function initTyped() {
+    var options = {
+        strings: ['^1000I\'m Tahir.^2000', 'I\'m a Developer.^1000'],
+        typeSpeed: 100,
+        backSpeed: 80,
+        loop: true,
+      };
+      
+    var typed = new Typed('.typed-element', options);
+}
+
+initTyped();

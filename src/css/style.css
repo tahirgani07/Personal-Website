@@ -16,19 +16,32 @@ body {
     font-family: 'Space Mono', monospace;
     overflow: hidden;
     color: white;
+    background: #444444;
 }
 
 nav {
     position: absolute;
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
     min-height: 6rem;
     /* background: red; */
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 40px;
+}
+
+nav .links {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-nav a {
+nav .links a {
     display: flex;
     justify-content: center;
     text-decoration: none;
@@ -40,12 +53,17 @@ nav a {
     letter-spacing: 1px;
 }
 
-nav a:hover {
+nav .logo-container a {
+    position: relative;
+    z-index: 2;
+}
+
+nav .links a:hover {
     color: black;
     transition: color 0.3s ease-in;
 }
 
-nav a::before {
+nav .links a::before {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -58,7 +76,7 @@ nav a::before {
     z-index: -1;
 }
 
-nav a:hover::before {
+nav .links a:hover::before {
     transform-origin: left;
     transform: scaleX(1);
     z-index: -1;
@@ -99,11 +117,30 @@ nav a:hover::before {
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.5s ease;
+    position: relative;
+}
+
+.title a::before {
+    content: '';
+    position: absolute;
+    left: -0.1rem;
+    top: -0.1rem;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2.2px solid  #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .title a:hover {
     background: #fafafa;
     color: #000;
+}
+
+.title a:hover::before {
+    content: '';
+    transform: scaleX(1.05) scaleY(1.23);
 }
 
 /* //////////////////////////////// */
@@ -128,15 +165,19 @@ nav a:hover::before {
 }
 
 .home-once {
-    opacity: 0;
+    clip-path: circle(0%);
 }
 
 .home-once-active {
-    transition: opacity 0.3s linear;
+    transition: all 0.75s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .home-once-to {
-    opacity: 1;
+    clip-path: circle(70%);
 }
 .fade-leave {
     transform: translateX(0%);
