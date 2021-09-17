@@ -1,3 +1,4 @@
+console.log("WORKS");
 barba.use(barbaCss);
 
 barba.init({
