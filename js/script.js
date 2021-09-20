@@ -41,6 +41,7 @@ let camera;
 let renderer;
 let scene;
 let codeWindowObj;
+let xPos, yPos, zPos;
 
 
 function init3dObj(restarted = false) {
@@ -54,16 +55,27 @@ function init3dObj(restarted = false) {
     const near = 0.1;
     const far = 500;
 
+    var lessThan900Px = false;
+    if(window.innerWidth <= 900) lessThan900Px = true;
+    if(lessThan900Px) {
+        xPos = 0;
+        yPos = container.clientHeight * 0.0001;
+        zPos = 28;
+    } else {
+        xPos = -(container.clientWidth*0.003);
+        yPos = 4;
+        zPos = 17;
+    }
     // Camera setup.
     camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    camera.position.set(-5, 4, 17);
+    camera.position.set(xPos, yPos, zPos);
 
     // Lighting
     const ambient = new THREE.AmbientLight(0x404040, 2);
     scene.add(ambient);
 
     const light = new THREE.DirectionalLight(0xffffff, 3);
-    light.position.set(-5, 40, 10);
+    light.position.set(xPos, 40, 10);
     scene.add(light);
 
     // Renderer.
@@ -92,6 +104,18 @@ function animate3dObj() {
 }
 
 function onWindowResize() {
+    var lessThan900Px = false;
+    if(window.innerWidth <= 900) lessThan900Px = true;
+    if(lessThan900Px) {
+        xPos = 0;
+        yPos = container.clientHeight * 0.0001;
+        zPos = 28;
+    } else {
+        xPos = -(container.clientWidth*0.003);
+        yPos = 4;
+        zPos = 17;
+    }
+    camera.position.set(xPos, yPos, zPos);
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
 
