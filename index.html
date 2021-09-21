@@ -19,8 +19,37 @@
             <a href="fade.html">WORK</a>
             <a href="#">CONTACT</a>
         </div>
-        <div class="placeholder"></div>
+        <div class="hamburger-container">
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
+
+    <div class="mobile-nav-container">
+        <div class="mobile-nav">
+            <div class="links">
+                <a onclick="toggleNav()" href="index.html">HOME</a>
+                <a onclick="toggleNav()" href="fade.html">WORK</a>
+                <a onclick="toggleNav()" href="#">CONTACT</a>
+            </div>
+            <div class="socials-container">
+                <div class="heading">GET IN TOUCH</div>
+                <div class="social-links">
+                    <a href="mailto: tahirgani07@gmail.com" target="_blank">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tahirgani07/" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tahir-gani-a31388191/" target="_blank">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <main data-barba="container" class="is-home" data-barba-namespace="home">
 
@@ -29,13 +58,11 @@
         </div>
 
         <div class="cover">
-
             <div class="title">
                 <h1>Hi, <span class="typed-element"></span> </h1>
                 <p>I make elegantly professional <b>web</b> apps and <b>flutter</b> apps and also <b>design user experiences</b>. If you want me to do any one of these for you, get in touch with me here.</p>
                 <a href="#">Contact Me</a>
             </div>
-
         </div>
         
 
@@ -43,6 +70,7 @@
     </main>
     
 
+    <script src="https://use.fontawesome.com/fb5c5f67e0.js"></script>
     <script src="./js/three.min.js"></script>
     <script src="./js/GLTFLoader.js"></script>
     <script src="./js/barba.umd.js"></script>

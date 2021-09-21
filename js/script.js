@@ -1,4 +1,26 @@
-console.log("WORKS");
+let hamburger = document.querySelector(".hamburger");
+let sceneContainer = document.querySelector(".scene");
+let title = document.querySelector(".cover .title");
+let mobileNav = document.querySelector(".mobile-nav");
+
+function toggleNav() {
+    hamburger = document.querySelector(".hamburger");
+    sceneContainer = document.querySelector(".scene");
+    title = document.querySelector(".cover .title");
+    mobileNav = document.querySelector(".mobile-nav");
+
+    hamburger.classList.toggle("is-active");
+    mobileNav.classList.toggle("is-active");
+    setTimeout(function() {
+        if(sceneContainer != null)
+            sceneContainer.classList.toggle("disabled");
+        if(title != null)
+            title.classList.toggle("disabled");
+    }, 110);
+}
+
+hamburger.addEventListener("click", toggleNav);
+
 barba.use(barbaCss);
 
 barba.init({
